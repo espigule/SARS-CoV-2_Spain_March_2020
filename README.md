@@ -12,11 +12,13 @@ rawdata14t18=Import["https://deim.urv.cat/~alephsys/COVID-19/spain/resources/Ris
 ```mathematica
 dates=rawdata14t18[[1,2,2;;]]
 ```
-`{DateObject[{2020, 3, 14, 0, 0, 0.}, "Instant", "Gregorian", 1.], 
+```mathematica
+{DateObject[{2020, 3, 14, 0, 0, 0.}, "Instant", "Gregorian", 1.], 
  DateObject[{2020, 3, 15, 0, 0, 0.}, "Instant", "Gregorian", 1.], 
  DateObject[{2020, 3, 16, 0, 0, 0.}, "Instant", "Gregorian", 1.], 
  DateObject[{2020, 3, 17, 0, 0, 0.}, "Instant", "Gregorian", 1.], 
- DateObject[{2020, 3, 18, 0, 0, 0.}, "Instant", "Gregorian", 1.]}`
+ DateObject[{2020, 3, 18, 0, 0, 0.}, "Instant", "Gregorian", 1.]}
+ ```
  
  ## Data Curation
  Propagation risk time series:
