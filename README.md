@@ -54,7 +54,7 @@ Transpose[{rawdata14t18[[1,3;;,1]],cleanNames1,cleanNames2,cleanNames3}]]
  ```
  ![Municipalities](img/municipalities.png)
  
- There is 6551 municipalities with non-ambiguous interpretations:
+ There are 6551 municipalities with non-ambiguous interpretations:
  
   ```mathematica
  municipalities1 = Flatten /@ Select[municipalities, Length[#[[-1]]] == 1 &]
