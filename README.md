@@ -1,12 +1,8 @@
 # Illustrating the propagation risk of COVID-19 in Spain
-Percentile of population estimated to have contracted the infection of SARS-CoV-2 through local contact. 
 
-## Propagation risk of COVID-19 by local contact in Spain (14 - 18 March)
+Percentile of population estimated to have contracted the infection of SARS-CoV-2 through local contact in Spain (14 - 18 March). Epidemiological model data source available in http://deim.urv.cat/~alephsys/COVID-19/spain/en.
 
-Data visualization generated with Wolfram's GeoGraphics. Epidemiological model: http://deim.urv.cat/~alephsys/COVID-19/spain/en
-
-### Source
-A team of researchers from Spain presented an interactive map: deim.urv.cat/~alephsys/COVID-19/spain/en/. And since their numerical data is freely available to everyone as an excel file I decided to take it a look in a Mathematica notebook. The following is the exploration I made with `"GeoGraphics"` using their estimated propagation risk of COVID-19 by local contact in Spain (14 - 18 March).
+The following is the exploration I made with `"GeoGraphics"` using their estimated propagation risk of COVID-19 by local contact in Spain (14 - 18 March).
 
 ### Importing the raw data
 
@@ -121,6 +117,7 @@ Disk[]}],
 legend
 },styling]
 ```
+![March 18th](Risk_Map_Wed-18_BEspigule.png)
 
 ### Evolution for the past four days:
 ```mathematica
@@ -138,11 +135,12 @@ Disk[]}],
 styling
 ],{d,4}],2]]
 ```
-
+![March 10-14](Propagation_14-17.png)
 ## Canary Islands
 ```mathematica
 GeoGraphics[Tenerife	island,GeoRange->{{29.7,27},{-18.5,-13}}]
 ```
+![CanaryIslands](CanaryIslands.png)
 ```mathematica
 GeoGraphics[
 (* Legend *)
@@ -176,3 +174,4 @@ Disk[]}],
 legend
 },styling]
 ```
+![CanaryIslands](Wed-18_Canary_BEspigule.png)
