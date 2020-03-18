@@ -2,7 +2,7 @@
 
 Percentile of population estimated to have contracted the infection of SARS-CoV-2 through local contact in Spain (14 - 18 March). Epidemiological model data source available in http://deim.urv.cat/~alephsys/COVID-19/spain/en.
 
-The following is the exploration I made with `"GeoGraphics"` using their estimated propagation risk of COVID-19 by local contact in Spain (14 - 18 March).
+The following is the exploration I made with `"GeoGraphics"` using [Alephsys Lab](https://deim.urv.cat/~alephsys/) estimated propagation risk of COVID-19 by local contact in Spain (14 - 18 March).
 
 ### Importing the raw data
 
