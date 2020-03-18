@@ -142,7 +142,7 @@ styling
 ![March 10-14](img/Propagation_14-17.png)
 ## Canary Islands
 ```mathematica
-GeoGraphics[Tenerife	island,GeoRange->{{29.7,27},{-18.5,-13}}]
+GeoGraphics[Entity["Island", "Tenerife"],GeoRange->{{29.7,27},{-18.5,-13}}]
 ```
 ![CanaryIslands](img/CanaryIslands.png)
 ```mathematica
@@ -179,3 +179,8 @@ legend
 },styling]
 ```
 ![CanaryIslands](img/Wed-18_Canary_BEspigule.png)
+
+# Animated GIFs Gallery
+![10-18 March](Bernatree_Estimated_Risk_March_10-18.gif)
+![14-18 March](Bernatree_Estimated_Risk_March_14-18.gif)
+![10-14 March](Bernatree_Estimated_Risk_March_10-14.gif)
