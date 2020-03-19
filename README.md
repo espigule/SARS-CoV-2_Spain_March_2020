@@ -180,6 +180,55 @@ legend
 ```
 ![CanaryIslands](img/Wed-18_Canary_BEspigule.png)
 
+
+# Municipalities' Administrative Divisions
+```mathematica
+divisions=Rule@@@Transpose[{
+Normal[dataset14t18[All,#Municipality&]],
+EntityValue[Normal[dataset14t18[All,#Municipality&]],"AdministrativeDivision"][[All,2,2]]}]
+```
+![Municipalities' Administrative Divisions](img/divisions.png)
+
+## Example: Catalonia
+```mathematica
+datasetCat = Select[dataset14t18, ReplaceAll[#Municipality, divisions] == "Catalonia" &]
+  ```
+  Top 10 municipalities:
+  ```mathematica
+  top10 = Reverse[SortBy[datasetCat, Normal[#Propagation][[-1, -1]] &]][ 1 ;; 10]
+  ```
+  ![Top 10 Municipalities' in Catalonia with higher estimated percentiles of infected individuals](img/top10.png)
+  
+```mathematica
+GeoGraphics[{
+Reverse@Table[
+GeoMarker[datasetCat[i,#Municipality&],
+riskn=Normal[datasetCat[i,#Propagation&]][[5,-1]];
+Graphics[{EdgeForm[Directive[Thin,Black]],Opacity[.8],
+FaceForm[ColorData["Rainbow"][If[(10+Log[riskn])/7<0,0.01,(10+Log[riskn])/3]]],
+Disk[]}],
+"Scale"->Offset[50If[(10+Log[riskn])/7<0,0.01,(10+Log[riskn])/5]]],
+{i,Length[datasetCat]}],
+(* City's Name, Top 3 *)
+Inset[Text[Style[#,Bold,16],Background->LightRed],GeoPosition[First@GeoPosition[#]+{0.,0.37}]]&/@Normal[top3[All,#Municipality&]],
+(* Legend *)
+MapIndexed[{
+EdgeForm[Directive[Thin,Black]],
+FaceForm[ColorData["Rainbow"][If[(10+Log[#1])/7<0,0.01,(10+Log[#1])/3]]],
+Disk[GeoPosition[{40.75,.6+.4First[#2]}],.1 If[(10+Log[#1])/7<0,0.001,(10+Log[#1])/5]],
+Inset[Style[ToString[100#]<>"%",Bold,16],GeoPosition[{40.85,.6+.4First[#2]}]]}&,
+{0.0001,0.00025,0.0005,0.001}],
+Inset[Style["Prediction made by Alephsys Lab            Designed by @bernatree               Powered by WOLFRAM",Gray,12],
+GeoPosition[{40.55,2}]]
+},{GeoBackground->
+GeoStyling["StreetMapNoLabels"],
+GeoScaleBar->Placed[{"Metric","Imperial"},{Right,Bottom}],
+GeoRange->{{42.9,40.5},{0.26,3.5}},
+GeoRangePadding->Full,
+ImageSize->800}]
+```
+![Calatonia Wednesday 8 2020](img/catalonia.png)
+
 # Animated GIFs Gallery
 ![10-18 March](Bernatree_Estimated_Risk_March_10-18.gif)
 ![14-18 March](Bernatree_Estimated_Risk_March_14-18.gif)
